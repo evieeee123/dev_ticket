@@ -64,6 +64,7 @@ class ProductIndex extends React.Component {
         return (
             <div className="all-items-box">
                 <h1>Hot Products</h1>
+                <p>Looking for some new gear to add to your wardrobe? Check out these hot products that are sure to become your new favorites!</p>
                 <div className="all-info">
                 <div className="info-left">
                     <div className="item-info">
@@ -128,19 +129,9 @@ class ProductIndex extends React.Component {
                 </div>
 
                 <div className="info-right">
-                    {/* <div className={this.state.itemId === 2 ? "" : "hidden"}> */}
                     <DetailItem price={productItem1[this.state.itemId - 1].price} des={productItem1[this.state.itemId - 1].description} rate={productItem1[this.state.itemId - 1].rating.rate} count={productItem1[this.state.itemId - 1].rating.count} itemId={productItem1[this.state.itemId - 1].id} />
-                    {/* </div> */}
                 </div>
                 </div>
-                {/* {
-                    items.map((item) => (
-                        <ol key={item.id} >
-                            Product_Name: {item.title},
-                            <img src={item.image} alt="" /> 
-                        </ol>
-                    ))
-                } */}
             </div>
         );
     }
