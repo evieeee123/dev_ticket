@@ -12,12 +12,10 @@ class ProductIndex extends React.Component {
         this.state = {
             items: [],
             itemId: 3,
-            DataisLoaded: false,
-            displayDetail: true
+            DataisLoaded: false
         };
-        this.handleClick = this.handleClick.bind(this);
     }
-
+    //fetch data
     componentDidMount() {
         fetch(
             "https://fakestoreapi.com/products?limit=5")
@@ -30,37 +28,16 @@ class ProductIndex extends React.Component {
             })
     }
 
-    handleClick(e) {
-        if (this.state.displayDetail) {
-            this.setState({ displayDetail: false });
-        } else {
-            this.setState({ displayDetail: true });
-        }
-    }
-
     render() {
         const { DataisLoaded, items } = this.state;
 
-        // console.log(items)
         if (!items) { return }
         if (!DataisLoaded) return <div><h1> The page is loading.... </h1> </div>;
 
+        //filter products
         const productItem1 = items
-            // .filter((item) => (item.title.includes("Cotton Jacket")))
             .filter((item) => (item.id <= 3))
             
-        // .map((item, index) => (
-        //     <div key={index} > {item.title}</div>
-        // ))
-        // debugger
-        // const productItem2 = items
-        //     .filter((item) => (item.title.includes("Backpack")))
-
-        // const productItem3 = items
-        //     .filter((item) => (item.title.includes("Slim Fit T-Shirts")))
-
-        // console.log(productItem1)
-        // debugger
         return (
             <div className="all-items-box">
                 <h1>Hot Products</h1>
@@ -80,11 +57,6 @@ class ProductIndex extends React.Component {
                             </div>
                             </Link>
                             </BrowserRouter>
-                            
-                            
-                            {/* <div className={this.state.itemId === 3 ? "" : "hidden"}>
-                                <DetailItem price={productItem1[2].price} des={productItem1[2].description} rate={productItem1[2].rating.rate} count={productItem1[0].rating.count} itemId={productItem1[2].id} />
-                            </div> */}
 
                     </div>
 
@@ -103,10 +75,6 @@ class ProductIndex extends React.Component {
                                 </Link>
                                 </BrowserRouter>
                         </div>
-
-                            {/* <div className={this.state.itemId === 1 ? "" : "hidden"}>
-                                <DetailItem price={productItem1[0].price} des={productItem1[0].description} rate={productItem1[0].rating.rate} count={productItem1[0].rating.count} itemId={productItem1[0].id} />
-                            </div> */}
 
                     </div>
 
@@ -127,7 +95,7 @@ class ProductIndex extends React.Component {
                         </div>
                     </div>
                 </div>
-
+                
                 <div className="info-right">
                     <DetailItem price={productItem1[this.state.itemId - 1].price} des={productItem1[this.state.itemId - 1].description} rate={productItem1[this.state.itemId - 1].rating.rate} count={productItem1[this.state.itemId - 1].rating.count} itemId={productItem1[this.state.itemId - 1].id} />
                 </div>
