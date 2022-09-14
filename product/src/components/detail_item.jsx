@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom"
 
-function DetailItem(props){
+function DetailItem(props) {
 
     // const [price, setPrice] = useState("");
     // const [des, setDes] = useState("");
@@ -31,7 +33,11 @@ function DetailItem(props){
     //     </div>
     // )
     return (
-        <div>{props.price}</div>
+        <div className="info-box">
+            <div>$ {props.price}</div>
+            <div>{props.des}</div>
+            <div>{props.rate}</div>
+        </div>
     )
 
 }
