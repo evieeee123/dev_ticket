@@ -47,9 +47,9 @@ class ProductIndex extends React.Component {
                     <div className="item-info">
                             <BrowserRouter>
                                 <Link to={`/${productItem1[2].id}`} onClick={() => this.setState({ itemId: 3 })}>
-                            <img onClick={this.handleClick} src={productItem1[2].image} className="product-img" alt="Cotton Jacket" />
-                            <div className="item-name" onClick={this.handleClick}>Cotton Jacket</div>
-                            <div onClick={this.handleClick}>
+                            <img src={productItem1[2].image} className="product-img" alt="Cotton Jacket" />
+                            <div className="item-name">Cotton Jacket</div>
+                            <div>
                                 {this.state.itemId === 3 ?
                                     <IoIosArrowDroprightCircle className="active-icon" />
                                     : <IoIosArrowDropleft className="icon" />
@@ -64,9 +64,9 @@ class ProductIndex extends React.Component {
                         <div>
                             <BrowserRouter>
                                 <Link to={`/${productItem1[0].id}`} onClick={() => this.setState({ itemId: 1 })}>
-                            <img onClick={this.handleClick} src={productItem1[0].image} className="product-img" alt="Backpack" />
-                            <div className="item-name" onClick={this.handleClick}>Backpack</div>
-                            <div onClick={this.handleClick}>
+                            <img src={productItem1[0].image} className="product-img" alt="Backpack" />
+                            <div className="item-name">Backpack</div>
+                            <div>
                                 {this.state.itemId === 1 ?
                                     <IoIosArrowDroprightCircle className="active-icon" />
                                     : <IoIosArrowDropleft className="icon" />
@@ -82,9 +82,9 @@ class ProductIndex extends React.Component {
                         <div>
                             <BrowserRouter>
                                 <Link to={`/${productItem1[0].id}`} onClick={() => this.setState({ itemId: 2 })}>
-                            <img onClick={this.handleClick} src={productItem1[1].image} className="product-img" alt="Slim Fit T-Shirts" />
-                            <div className="item-name" onClick={this.handleClick}>Slim Fit T-Shirts</div>
-                            <div onClick={this.handleClick}>
+                            <img src={productItem1[1].image} className="product-img" alt="Slim Fit T-Shirts" />
+                            <div className="item-name">Slim Fit T-Shirts</div>
+                            <div>
                                 {this.state.itemId === 2 ?
                                     <IoIosArrowDroprightCircle className="active-icon" />
                                     : <IoIosArrowDropleft className="icon" />
